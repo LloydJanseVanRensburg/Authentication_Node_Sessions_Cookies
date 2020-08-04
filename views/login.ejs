@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Node Auth</title>
+    <style>
+      .login-form {
+        width: 400px;
+        height: 400px;
+        margin: 1rem auto;
+      }
+
+      .input-group {
+        width: 100%;
+      }
+
+      .input-group label {
+        display: block;
+      }
+
+      .input-group input {
+        width: 100%;
+      }
+
+      button {
+        padding: 10px 17px;
+        margin-top: 1rem;
+        font-size: 1rem;
+        background: #eee;
+        border: 1px solid #333;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-form">
+      <% if(err) { %>
+      <p style="color: red;"><%= err %></p>
+      <% } %>
+      <h3>Login Page</h3>
+      <form action="/login" method="POST">
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input type="email" name="email" />
+        </div>
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input type="password" name="password" />
+        </div>
+        <button>Login</button>
+      </form>
+      <a href="/register">Register</a>
+    </div>
+  </body>
+</html>
